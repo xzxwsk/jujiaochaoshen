@@ -1,10 +1,111 @@
 <!DOCTYPE html>
 <html>
-	<head>
-		<meta charset="utf-8" />
-		<title></title>
-	</head>
-	<body>
-		
-	</body>
+<head>
+<meta charset="utf-8" />
+<title>首页</title>
+<link href="css/swiper.css" rel="stylesheet" />
+<link href="css/aos.css" rel="stylesheet" />
+<link href="css/style.css" rel="stylesheet" />
+<script src="js/jquery.min.js"></script>
+<script src="js/swiper.min.js"></script>
+<script src="js/aos.min.js"></script>
+</head>
+<body>
+<header id="header"></header>
+<div class="banner">
+	<div class="swiper-container">
+	    <div class="swiper-wrapper">
+	        <div class="swiper-slide swiper-slide1"></div>
+	        <div class="swiper-slide swiper-slide2"></div>
+	        <div class="swiper-slide swiper-slide3"></div>
+	    </div>
+	    <!-- 如果需要分页器 -->
+	    <div class="swiper-pagination"></div>
+	    
+	    <!-- 如果需要导航按钮 -->
+	    <div class="swiper-button-prev"></div>
+	    <div class="swiper-button-next"></div>
+	</div>
+</div>
+<section class="icon_ls">
+	<ul class="con">
+		<li data-aos="fade-up">
+			<a href="#"><div class="icon icon1"></div>子宫肌瘤</a>
+		</li>
+		<li data-aos="fade-up">
+			<a href="#"><div class="icon icon2"></div>子宫腺肌症</a>
+		</li>
+		<li data-aos="fade-up">
+			<a href="#"><div class="icon icon3"></div>乳腺纤维瘤</a>
+		</li>
+		<li data-aos="fade-up">
+			<a href="#"><div class="icon icon4"></div>肝癌</a>
+		</li>
+		<li data-aos="fade-up">
+			<a href="#"><div class="icon icon5"></div>胰腺癌</a>
+		</li>
+		<li data-aos="fade-up">
+			<a href="#"><div class="icon icon6"></div>外阴白斑</a>
+		</li>
+	</ul>
+</section>
+<section class="section1">
+	<div class="title">
+		<div class="word">治疗方式</div>
+		<ul class="tab_head">
+			<li class="cur">高强度聚焦超声手术（FUS）</li>
+			<li>海极星特色妇科治疗</li>
+		</ul>
+	</div>
+</section>
+<section class="icon_ls2">
+	<ul class="con">
+		<li>
+			<a href="#"><div class="icon icon1"></div>就诊流程</a>
+		</li>
+		<li>
+			<a href="#"><div class="icon icon2"></div>诊疗时间</a>
+		</li>
+		<li>
+			<a href="#"><div class="icon icon3"></div>医院导航</a>
+		</li>
+		<li>
+			<a href="#"><div class="icon icon4"></div>常见问题</a>
+		</li>
+		<li>
+			<a href="#"><div class="icon icon5"></div>医院概况</a>
+		</li>
+	</ul>
+</section>
+<footer id="footer"></footer>
+<script>
+AOS.init({
+	offset: 200,
+	duration: 1000,
+	easing: 'ease',
+	delay: 200,
+	once: 'true'
+});
+$(function(){
+	$("#header").load('./head.html', function() {
+		$("#footer").load('./footer.html', function() {
+			AOS.refreshHard();
+		});
+	});
+	
+	var mySwiper = new Swiper ('.swiper-container', {
+	    loop: true,
+	    // 如果需要分页器
+	    pagination: '.swiper-pagination',
+	    paginationClickable: true,
+		// mousewheelControl: true,
+		// keyboardControl: true,
+	    
+	    // 如果需要前进后退按钮
+	    nextButton: '.swiper-button-next',
+	    prevButton: '.swiper-button-prev'	    
+	});
+});
+</script>
+</body>
 </html>
