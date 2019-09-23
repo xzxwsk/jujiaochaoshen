@@ -1,7 +1,9 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="utf-8" />
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 <title>首页</title>
 <link href="css/swiper.css" rel="stylesheet" />
 <link href="css/aos.css" rel="stylesheet" />
@@ -9,6 +11,7 @@
 <script src="js/jquery.min.js"></script>
 <script src="js/swiper.min.js"></script>
 <script src="js/aos.min.js"></script>
+<script src="js/common.js"></script>
 </head>
 <body>
 <header id="header"></header>
@@ -146,8 +149,8 @@
 							</div>
 						</div>
 					</div>
+					<div class="swiper-pagination"></div>
 				</div>
-				<div class="swiper-pagination"></div>
 			</div>
 			<ul class="right">
 				<li>
@@ -196,19 +199,74 @@
 			<div class="word">新闻中心</div>
 			<a href="##" class="more">More <i class="icon"></i></a>
 		</div>
-		<div class="ls">
-			<ul>
-				<li>
-					<a href="##" style="background-image: url(img/img_10.jpg);">
-						<span class="left">
-							<span class="name">张小小</span>
-							<span class="post">护士</span>
-						</span>
-						<span class="department">放射科</span>
-					</a>
-				</li>
-			</ul>
+		<div class="swiper-container" id="swiper-container4">
+		    <div class="swiper-wrapper">
+		        <div class="swiper-slide">
+					<ul class="ls">
+						<li>
+							<a href="##" style="background-image: url(img/img_10.jpg);">
+								<span class="left">
+									<span class="name">张小小</span>
+									<span class="post">护士</span>
+								</span>
+								<span class="department"><h3>放射科</h3></span>
+							</a>
+						</li>
+						<li>
+							<a href="##" style="background-image: url(img/img_11.jpg);">
+								<span class="left">
+									<span class="name">李小华</span>
+									<span class="post">护士</span>
+								</span>
+								<span class="department"><h3>放射科</h3></span>
+							</a>
+						</li>
+						<li>
+							<a href="##" style="background-image: url(img/img_12.jpg);">
+								<span class="left">
+									<span class="name">王医生</span>
+									<span class="post">主治医生</span>
+								</span>
+								<span class="department"><h3>放射科</h3></span>
+							</a>
+						</li>
+						<li>
+							<a href="##" style="background-image: url(img/img_13.jpg);">
+								<span class="left">
+									<span class="name">陈医生</span>
+									<span class="post">专科医生</span>
+								</span>
+								<span class="department"><h3>放射科</h3></span>
+							</a>
+						</li>
+						<li>
+							<a href="##" style="background-image: url(img/img_14.jpg);">
+								<span class="left">
+									<span class="name">陈医生</span>
+									<span class="post">主任医生</span>
+								</span>
+								<span class="department"><h3>放射科</h3></span>
+							</a>
+						</li>
+					</ul>
+				</div>
+		        <div class="swiper-slide" style="background-image: url(img/img_02.jpg);">
+					<a href="##" class="play_btn"></a>
+				</div>
+		        <div class="swiper-slide" style="background-image: url(img/img_03.jpg);">
+					<a href="##" class="play_btn"></a>
+				</div>
+		        <div class="swiper-slide" style="background-image: url(img/img_04.jpg);">
+					<a href="##" class="play_btn"></a>
+				</div>
+		        <div class="swiper-slide" style="background-image: url(img/img_04.jpg);">
+					<a href="##" class="play_btn"></a>
+				</div>
+		    </div>
+		    
+		    <div class="swiper-pagination"></div>
 		</div>
+		
 	</div>	
 </section>
 <section class="icon_ls2">
@@ -255,16 +313,16 @@ $(function(){
 		// keyboardControl: true,
 	    
 	    // 如果需要前进后退按钮
-	    nextButton: '.swiper-button-next',
-	    prevButton: '.swiper-button-prev'	    
+	    nextButton: '#swiper-container .swiper-button-next',
+	    prevButton: '#swiper-container .swiper-button-prev'
 	});
 	var mySwiper2 = new Swiper ('#swiper-container2', {
 	    loop: false,
 		slidesPerView: 4,
 		spaceBetween: 20,
 	    // 如果需要前进后退按钮
-	    nextButton: '.swiper-button-next',
-	    prevButton: '.swiper-button-prev',
+	    nextButton: '#swiper-container2 .swiper-button-next',
+	    prevButton: '#swiper-container2 .swiper-button-prev',
 		// slidesOffsetBefore: 10,
 		// slidesOffsetAfter: 10
 		onInit: function() {
@@ -301,7 +359,7 @@ $(function(){
 		autoplay:4400,
 		autoplayDisableOnInteraction:false,
 		effect:'fade',
-		pagination : '.swiper-pagination',
+		pagination : '#swiper-container3 .swiper-pagination',
 		paginationClickable :true,
 		paginationBulletRender: function (swiper, index, className) {
 		    return '<span class="' + className + '">' + (index + 1) + '</span>';
@@ -309,12 +367,19 @@ $(function(){
 		onSlideChangeStart: function(swiper){
 			var nextSlide=swiper.slides.eq(swiper.activeIndex);
 			nextSlide.addClass(trList[Math.floor(Math.random()*5)]);
-		   },
+		},
 		onSlideChangeEnd: function(swiper){
 			var prevSlide=swiper.slides[swiper.previousIndex];
 			prevSlide.className="swiper-slide";
-		   },
-		});
+		}
+	});
+	
+	var mySwiper4 = new Swiper ('#swiper-container4', {
+	    loop: true,
+		mousewheelControl: true,
+	    pagination: '.swiper-pagination',
+	    paginationClickable: true,
+	});
 	
 	$('.tab_head li').click(function(){
 		$(this).addClass('cur').siblings().removeClass('cur');
