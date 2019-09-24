@@ -136,26 +136,26 @@
 			<div class="left">
 				<div class="swiper-container" id="swiper-container3">
 					<div class="swiper-wrapper">
-						<div class="swiper-slide leftUp">
-							<img src="img/img_06.jpg" />
+						<div class="swiper-slide">
+							<a href="##"><img src="img/img_06.jpg" /></a>
 							<div class="detail">
 								<h3>医学装备部举办医学装备第三级管理专题会暨医学</h3>
 							</div>
 						</div>
 						<div class="swiper-slide">
-							<img src="img/img_06.jpg" />
+							<a href="##"><img src="img/img_06.jpg" /></a>
 							<div class="detail">
 								<h3>医学装备部举办医学装备第三级管理专题会暨医学</h3>
 							</div>
 						</div>
 						<div class="swiper-slide">
-							<img src="img/img_06.jpg" />
+							<a href="##"><img src="img/img_06.jpg" /></a>
 							<div class="detail">
 								<h3>医学装备部举办医学装备第三级管理专题会暨医学</h3>
 							</div>
 						</div>
 						<div class="swiper-slide">
-							<img src="img/img_06.jpg" />
+							<a href="##"><img src="img/img_06.jpg" /></a>
 							<div class="detail">
 								<h3>医学装备部举办医学装备第三级管理专题会暨医学</h3>
 							</div>
@@ -173,6 +173,7 @@
 					</div>
 					<p>8月22日，医学装备部在行政楼6楼会议室举办医学装备第8月22日，医学装备部在行政楼6楼会议室举办医学装备第部在行政楼6楼会议室举办医学周雷讲...<a href="##">[查看详细]</a>
 </p>
+					<h3 class="date_mobile">2019-09-02</h3>
 				</li>
 				<li>
 					<div class="img" style="background-image: url(img/img_08.jpg);"><a href="##"></a></div>
@@ -182,6 +183,7 @@
 					</div>
 					<p>为进一步提高保卫部服务能力，结合“不忘初心，牢记使命”主题教育活动，8月28日下午3点，保卫部邀请四川省消防协会培训讲师周雷雷对部门内师周...<a href="##">[查看详细]</a>
 </p>
+					<h3 class="date_mobile">2019-09-02</h3>
 				</li>
 				<li>
 					<div class="img" style="background-image: url(img/img_09.jpg);"><a href="##"></a></div>
@@ -191,8 +193,10 @@
 					</div>
 					<p>分管领导辜玉刚副院长到会并提出要求，保卫部作为单位安全管理责任部门，要切实提高服务能力，不断转变工作作风，为医院安全发展保驾护航周雷航...<a href="##">[查看详细]</a>
 </p>
+					<h3 class="date_mobile">2019-09-02</h3>
 				</li>
 			</ul>
+			<div class="view_more_box"><a href="##" class="view_more">查看更多</a></div>
 		</div>
 		<div class="tab_con">
 			<p>最新动态</p>
@@ -208,7 +212,7 @@
 <section class="section3">
 	<div class="con">
 		<div class="title">
-			<div class="word">新闻中心</div>
+			<div class="word">医师团队</div>
 			<a href="##" class="more">More <i class="icon"></i></a>
 		</div>
 		<div class="swiper-container" id="swiper-container4">
@@ -333,7 +337,7 @@ $(function(){
 	});
 	var mySwiper2 = new Swiper ('#swiper-container2', {
 	    loop: false,
-		slidesPerView: ($('body').width() >= 1200) ? 4 : 2,
+		slidesPerView: 4,
 		spaceBetween: 20,
 	    // 如果需要前进后退按钮
 	    nextButton: '#swiper-container2 .swiper-button-next',
@@ -342,7 +346,7 @@ $(function(){
 		// slidesOffsetAfter: 10
 		onInit: function(swiper) {
 			setTimeout(function(){
-				swiper.update();
+				swiper.update(true);
 			}, 100);
 			if($('#swiper-container2 .swiper-button-prev').hasClass('swiper-button-disabled')) {
 				$('.left2>.swiper-button-prev').addClass('swiper-button-disabled');
@@ -362,6 +366,11 @@ $(function(){
 			} else {
 				$('.left2>.swiper-button-next').removeClass('swiper-button-disabled');
 			}
+		},
+		breakpoints: {
+		    1200: {
+				slidesPerView: 2,
+			}
 		}
 	});
 	$('.left2>.swiper-button-prev').click(function(){
@@ -379,6 +388,9 @@ $(function(){
 		effect:'fade',
 		pagination : '#swiper-container3 .swiper-pagination',
 		paginationClickable :true,
+		onInit: function (swiper) {
+			swiper.wrapper.children('.swiper-slide-active').addClass(trList[parseInt(Math.random()*5)]);
+		},
 		paginationBulletRender: function (swiper, index, className) {
 		    return '<span class="' + className + '">' + (index + 1) + '</span>';
 		},
@@ -389,18 +401,30 @@ $(function(){
 		onSlideChangeEnd: function(swiper){
 			var prevSlide=swiper.slides[swiper.previousIndex];
 			prevSlide.className="swiper-slide";
+		},
+		breakpoints: {
+		    1200: {
+		        autoplay:300000,
+				speed:1000,
+				effect: 'slide',
+				autoplayDisableOnInteraction: false,
+				loop:true,
+				centeredSlides: true,
+				slidesPerView: 2,
+				onInit:function(swiper){
+					setTimeout(function(){
+						swiper.update(true);
+					}, 100);
+				},
+				paginationBulletRender: null,
+				onSlideChangeStart: function(){},
+				onSlideChangeEnd: function(){}
+		    }
 		}
 	}
-	if($('body').width() < 1200) {
-		swiper3Param = {
-			pagination: '#swiper-container3 .swiper-pagination',
-			onInit: function(swiper) {
-				setTimeout(function(){
-					swiper.update();
-				}, 100);
-			}
-		}
-	}
+	// if($('body').width() < 1200) {
+	// 	$('#swiper-container3 .swiper-slide').eq(1).addClass('swiper-slide-center').addClass('none-effect');
+	// }
 	var swiper3 = new Swiper('#swiper-container3',swiper3Param);
 	
 	var mySwiper4 = new Swiper ('#swiper-container4', {
