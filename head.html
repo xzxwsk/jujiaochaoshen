@@ -45,9 +45,21 @@
 		</ul>
 	</div>
 </nav>
+<div class="mobile_nav">
+	<ul>
+		<li><a href="#">网站首页</a></li>
+		<li class="cur"><a href="#">医院概况</a></li>
+		<li><a href="#">海扶治疗</a></li>
+		<li><a href="#">治疗适应症</a></li>
+		<li><a href="#">临床病例</a></li>
+		<li><a href="#">新闻中心</a></li>
+		<li><a href="#">就医指南</a></li>
+	</ul>
+</div>
 
 <script>
 $(".navbtn").click(function(){
 	$('.top2').toggleClass('open');
+	$(".mobile_nav").toggleClass('open');
 });
 </script>

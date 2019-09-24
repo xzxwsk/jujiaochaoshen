@@ -18,9 +18,9 @@
 <div class="banner">
 	<div class="swiper-container" id="swiper-container">
 	    <div class="swiper-wrapper">
-	        <div class="swiper-slide swiper-slide1"></div>
-	        <div class="swiper-slide swiper-slide2"></div>
-	        <div class="swiper-slide swiper-slide3"></div>
+	        <div class="swiper-slide" style="background-image: url(img/banner.jpg);"></div>
+	        <div class="swiper-slide" style="background-image: url(img/banner.jpg);"></div>
+	        <div class="swiper-slide" style="background-image: url(img/banner.jpg);"></div>
 	    </div>
 	    <!-- 如果需要分页器 -->
 	    <div class="swiper-pagination"></div>
@@ -57,12 +57,13 @@
 		<div class="clearfix title">
 			<div class="word">治疗方式</div>
 			<ul class="tab_head">
-				<li class="cur">高强度聚焦超声手术（FUS）</li>
-				<li>海极星特色妇科治疗</li>
+				<li class="cur" title="高强度聚焦超声手术（FUS）">高强度聚焦超声手术（FUS）</li>
+				<li title="海极星特色妇科治疗">海极星特色妇科治疗</li>
 			</ul>
 			<a href="##" class="more">More <i class="icon"></i></a>
 		</div>
 		<div class="tab_con active">
+			<a href="##" class="view_more">查看更多</a>
 			<div class="left">
 				<div class="left1">
 					<h2><a href="##">两大机构在渝“牵手” 共推聚焦超声消融手术全球发展</a></h2>
@@ -75,18 +76,28 @@
 					    <div class="swiper-wrapper">
 					        <div class="swiper-slide" style="background-image: url(img/img_01.jpg);">
 								<a href="##" class="play_btn"></a>
+								<a href="##" class="txt">两大机构在渝“牵手” 共推聚</a>
+								<div class="date">发布时间：2019-09-19</div>
 							</div>
 					        <div class="swiper-slide" style="background-image: url(img/img_02.jpg);">
 								<a href="##" class="play_btn"></a>
+								<a href="##" class="txt">两大机构在渝“牵手” 共推聚</a>
+								<div class="date">发布时间：2019-09-19</div>
 							</div>
 					        <div class="swiper-slide" style="background-image: url(img/img_03.jpg);">
 								<a href="##" class="play_btn"></a>
+								<a href="##" class="txt">两大机构在渝“牵手” 共推聚</a>
+								<div class="date">发布时间：2019-09-19</div>
 							</div>
 					        <div class="swiper-slide" style="background-image: url(img/img_04.jpg);">
 								<a href="##" class="play_btn"></a>
+								<a href="##" class="txt">两大机构在渝“牵手” 共推聚</a>
+								<div class="date">发布时间：2019-09-19</div>
 							</div>
 					        <div class="swiper-slide" style="background-image: url(img/img_04.jpg);">
 								<a href="##" class="play_btn"></a>
+								<a href="##" class="txt">两大机构在渝“牵手” 共推聚</a>
+								<div class="date">发布时间：2019-09-19</div>
 							</div>
 					    </div>
 					    
@@ -101,6 +112,7 @@
 			</div>
 			<div class="right" style="background-image: url(img/img_05.jpg);">
 				<a href="##" class="play_btn"></a>
+				<a href="##" class="txt">两大机构在渝“牵手” 共推聚焦超声消融</a>
 			</div>
 		</div>
 		<div class="tab_con">
@@ -124,7 +136,7 @@
 			<div class="left">
 				<div class="swiper-container" id="swiper-container3">
 					<div class="swiper-wrapper">
-						<div class="swiper-slide rightDownBig">
+						<div class="swiper-slide leftUp">
 							<img src="img/img_06.jpg" />
 							<div class="detail">
 								<h3>医学装备部举办医学装备第三级管理专题会暨医学</h3>
@@ -270,20 +282,23 @@
 	</div>	
 </section>
 <section class="icon_ls2">
+	<div class="title">
+		<div class="word">就医指南</div>
+	</div>
 	<ul class="con">
-		<li>
+		<li class="li1">
 			<a href="##"><div class="icon icon1"></div>就诊流程</a>
 		</li>
-		<li>
+		<li class="li2">
 			<a href="##"><div class="icon icon2"></div>诊疗时间</a>
 		</li>
-		<li>
+		<li class="li3">
 			<a href="##"><div class="icon icon3"></div>医院导航</a>
 		</li>
-		<li>
+		<li class="li4">
 			<a href="##"><div class="icon icon4"></div>常见问题</a>
 		</li>
-		<li>
+		<li class="li5">
 			<a href="##"><div class="icon icon5"></div>医院概况</a>
 		</li>
 	</ul>
@@ -318,14 +333,17 @@ $(function(){
 	});
 	var mySwiper2 = new Swiper ('#swiper-container2', {
 	    loop: false,
-		slidesPerView: 4,
+		slidesPerView: ($('body').width() >= 1200) ? 4 : 2,
 		spaceBetween: 20,
 	    // 如果需要前进后退按钮
 	    nextButton: '#swiper-container2 .swiper-button-next',
 	    prevButton: '#swiper-container2 .swiper-button-prev',
 		// slidesOffsetBefore: 10,
 		// slidesOffsetAfter: 10
-		onInit: function() {
+		onInit: function(swiper) {
+			setTimeout(function(){
+				swiper.update();
+			}, 100);
 			if($('#swiper-container2 .swiper-button-prev').hasClass('swiper-button-disabled')) {
 				$('.left2>.swiper-button-prev').addClass('swiper-button-disabled');
 			}
@@ -354,7 +372,7 @@ $(function(){
 	});
 	
 	var trList=['leftUp','moveRight','moveDown','centerBig','rightDownBig'];
-	var swiper3 = new Swiper('#swiper-container3',{
+	var swiper3Param = {
 		speed:500,
 		autoplay:4400,
 		autoplayDisableOnInteraction:false,
@@ -372,13 +390,24 @@ $(function(){
 			var prevSlide=swiper.slides[swiper.previousIndex];
 			prevSlide.className="swiper-slide";
 		}
-	});
+	}
+	if($('body').width() < 1200) {
+		swiper3Param = {
+			pagination: '#swiper-container3 .swiper-pagination',
+			onInit: function(swiper) {
+				setTimeout(function(){
+					swiper.update();
+				}, 100);
+			}
+		}
+	}
+	var swiper3 = new Swiper('#swiper-container3',swiper3Param);
 	
 	var mySwiper4 = new Swiper ('#swiper-container4', {
 	    loop: true,
 		mousewheelControl: true,
 	    pagination: '.swiper-pagination',
-	    paginationClickable: true,
+	    paginationClickable: true
 	});
 	
 	$('.tab_head li').click(function(){
