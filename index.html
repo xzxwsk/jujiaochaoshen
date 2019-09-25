@@ -18,9 +18,10 @@
 <div class="banner">
 	<div class="swiper-container" id="swiper-container">
 	    <div class="swiper-wrapper">
-	        <div class="swiper-slide" style="background-image: url(img/banner.jpg);"></div>
-	        <div class="swiper-slide" style="background-image: url(img/banner.jpg);"></div>
-	        <div class="swiper-slide" style="background-image: url(img/banner.jpg);"></div>
+	        <div class="swiper-slide" style="background-image: url(css/images/01.jpg);"></div>
+	        <div class="swiper-slide" style="background-image: url(css/images/02.jpg);"></div>
+	        <div class="swiper-slide" style="background-image: url(css/images/03.jpg);"></div>
+	        <div class="swiper-slide" style="background-image: url(css/images/04.jpg);"></div>
 	    </div>
 	    <!-- 如果需要分页器 -->
 	    <div class="swiper-pagination"></div>
@@ -52,7 +53,7 @@
 		</li>
 	</ul>
 </section>
-<section class="section1">
+<section class="section1" data-aos="fade-up">
 	<div class="con">
 		<div class="clearfix title">
 			<div class="word">治疗方式</div>
@@ -120,7 +121,7 @@
 		</div>
 	</div>
 </section>
-<section class="section2">
+<section class="section2" data-aos="fade-up">
 	<div class="con">
 		<div class="clearfix title">
 			<div class="word">新闻中心</div>
@@ -209,11 +210,12 @@
 		</div>
 	</div>
 </section>
-<section class="section3">
+<section class="section3" data-aos="fade-up">
 	<div class="con">
 		<div class="title">
 			<div class="word">医师团队</div>
 			<a href="##" class="more">More <i class="icon"></i></a>
+			<a href="##" class="mobile_more">查看更多</i></a>
 		</div>
 		<div class="swiper-container" id="swiper-container4">
 		    <div class="swiper-wrapper">
@@ -225,7 +227,7 @@
 									<span class="name">张小小</span>
 									<span class="post">护士</span>
 								</span>
-								<span class="department"><h3>放射科</h3></span>
+								<span class="department"><h3 title="放射科">放射科</h3></span>
 							</a>
 						</li>
 						<li>
@@ -234,7 +236,7 @@
 									<span class="name">李小华</span>
 									<span class="post">护士</span>
 								</span>
-								<span class="department"><h3>放射科</h3></span>
+								<span class="department"><h3 title="放射科">放射科</h3></span>
 							</a>
 						</li>
 						<li>
@@ -243,7 +245,7 @@
 									<span class="name">王医生</span>
 									<span class="post">主治医生</span>
 								</span>
-								<span class="department"><h3>放射科</h3></span>
+								<span class="department"><h3 title="放射科">放射科</h3></span>
 							</a>
 						</li>
 						<li>
@@ -252,7 +254,7 @@
 									<span class="name">陈医生</span>
 									<span class="post">专科医生</span>
 								</span>
-								<span class="department"><h3>放射科</h3></span>
+								<span class="department"><h3 title="放射科">放射科</h3></span>
 							</a>
 						</li>
 						<li>
@@ -261,7 +263,16 @@
 									<span class="name">陈医生</span>
 									<span class="post">主任医生</span>
 								</span>
-								<span class="department"><h3>放射科</h3></span>
+								<span class="department"><h3 title="放射科">放射科</h3></span>
+							</a>
+						</li>
+						<li>
+							<a href="##" style="background-image: url(img/img_14.jpg);">
+								<span class="left">
+									<span class="name">陈医生</span>
+									<span class="post">主任医生</span>
+								</span>
+								<span class="department"><h3 title="放射科">放射科</h3></span>
 							</a>
 						</li>
 					</ul>
@@ -285,7 +296,7 @@
 		
 	</div>	
 </section>
-<section class="icon_ls2">
+<section class="icon_ls2" data-aos="fade-up">
 	<div class="title">
 		<div class="word">就医指南</div>
 	</div>
@@ -431,7 +442,12 @@ $(function(){
 	    loop: true,
 		mousewheelControl: true,
 	    pagination: '.swiper-pagination',
-	    paginationClickable: true
+	    paginationClickable: true,
+		onInit:function(swiper){
+			setTimeout(function(){
+				swiper.update(true);
+			}, 100);
+		}
 	});
 	
 	$('.tab_head li').click(function(){
