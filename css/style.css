@@ -217,8 +217,8 @@ nav li.cur a { font-weight: bold; }
 .icon_ls2 li:hover a { font-weight: bold; color: #05a3e3; }
 .icon_ls2 li:hover:after { width: 75%; }
 
-.bottom { color: #fff; }
-.bottom .bottom1 { height: 450px; background: url(images/bottom_bg.jpg) no-repeat; }
+.bottom { color: #fff; background: url(images/bottom_bg.jpg) no-repeat; background-size: cover; background-repeat: no-repeat; background-position: center 0; }
+.bottom .bottom1 { height: 450px; }
 .bottom .bottom1 .con { display: -webkit-box; display: -moz-box; display: -ms-flexbox; display: -webkit-flex; display: flex; flex-direction: row; justify-content: space-between; align-items: center; height: 100%; }
 .bottom .bottom1 .logo { width: 472px; height: 218px; background: url(images/logo_02.png); }
 .bottom .bottom1 .qrcode { display: -webkit-box; display: -moz-box; display: -ms-flexbox; display: -webkit-flex; display: flex; flex-direction: row; justify-content: center; align-items: center; height: 100%; }
@@ -229,7 +229,7 @@ nav li.cur a { font-weight: bold; }
 .bottom .bottom1 .contact .title .word .en { font-weight: normal; font-family: arial; }
 .bottom .bottom1 .contact li { padding: 0 0 0 10px; font-size: 14px; line-height: 28px; background: url(images/icon_dot.png) left center no-repeat; }
 .bottom .bottom1 .contact li a { color: #fff; }
-.bottom .bottom2 { padding: 15px 0 0; height: 37px; font-size: 14px; background: #35b1d1; }
+.bottom .bottom2 { padding: 15px 0 0; height: 37px; font-size: 14px; background: rgba(255, 255, 255, 0.1); }
 .bottom .bottom2 a { margin: 0 15px 0 0; color: #fff; }
 .bottom .bottom2 a:last-child { margin: 0; }
 

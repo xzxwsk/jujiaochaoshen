@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>医院概况</title>
+<link href="css/swiper.css" rel="stylesheet" />
+<link href="css/aos.css" rel="stylesheet" />
+<link href="css/style.css" rel="stylesheet" />
+<script src="js/jquery.min.js"></script>
+<script src="js/swiper.min.js"></script>
+<script src="js/aos.min.js"></script>
+<script src="js/common.js"></script>
+</head>
+<body>
+<header id="header"></header>
+<div class="inner_banner">
+	
+</div>
+<section class="section3" data-aos="fade-up">
+	<div class="con">
+		<div class="title">
+			<div class="word">专家团队</div>
+			<a href="##" class="more">More <i class="icon"></i></a>
+			<a href="##" class="mobile_more">查看更多</i></a>
+		</div>
+		<ul class="ls">
+			<li>
+				<a href="##" style="background-image: url(img/img_10.jpg);">
+					<span class="left">
+						<span class="name">张小小</span>
+						<span class="post">护士</span>
+					</span>
+					<span class="department"><h3 title="放射科">放射科</h3></span>
+				</a>
+			</li>
+			<li>
+				<a href="##" style="background-image: url(img/img_11.jpg);">
+					<span class="left">
+						<span class="name">李小华</span>
+						<span class="post">护士</span>
+					</span>
+					<span class="department"><h3 title="放射科">放射科</h3></span>
+				</a>
+			</li>
+			<li>
+				<a href="##" style="background-image: url(img/img_12.jpg);">
+					<span class="left">
+						<span class="name">王医生</span>
+						<span class="post">主治医生</span>
+					</span>
+					<span class="department"><h3 title="放射科">放射科</h3></span>
+				</a>
+			</li>
+			<li>
+				<a href="##" style="background-image: url(img/img_13.jpg);">
+					<span class="left">
+						<span class="name">陈医生</span>
+						<span class="post">专科医生</span>
+					</span>
+					<span class="department"><h3 title="放射科">放射科</h3></span>
+				</a>
+			</li>
+			<li>
+				<a href="##" style="background-image: url(img/img_14.jpg);">
+					<span class="left">
+						<span class="name">陈医生</span>
+						<span class="post">主任医生</span>
+					</span>
+					<span class="department"><h3 title="放射科">放射科</h3></span>
+				</a>
+			</li>
+			<li>
+				<a href="##" style="background-image: url(img/img_14.jpg);">
+					<span class="left">
+						<span class="name">陈医生</span>
+						<span class="post">主任医生</span>
+					</span>
+					<span class="department"><h3 title="放射科">放射科</h3></span>
+				</a>
+			</li>
+		</ul>
+	</div>
+</section>
+<footer id="footer"></footer>
+<script>
+AOS.init({
+	offset: 200,
+	duration: 1000,
+	easing: 'ease',
+	delay: 200,
+	once: 'true'
+});
+$(function(){
+	$("#header").load('./head.html', function() {
+		$("#footer").load('./footer.html', function() {
+			AOS.refreshHard();
+		});
+	});
+	
+	var mySwiper = new Swiper ('#swiper-container', {
+	    loop: true,
+	    // 如果需要分页器
+	    pagination: '.swiper-pagination',
+	    paginationClickable: true,
+		// mousewheelControl: true,
+		// keyboardControl: true,
+	    
+	    // 如果需要前进后退按钮
+	    nextButton: '#swiper-container .swiper-button-next',
+	    prevButton: '#swiper-container .swiper-button-prev'
+	});
+	var mySwiper2 = new Swiper ('#swiper-container2', {
+	    loop: false,
+		slidesPerView: 4,
+		spaceBetween: 20,
+	    // 如果需要前进后退按钮
+	    nextButton: '#swiper-container2 .swiper-button-next',
+	    prevButton: '#swiper-container2 .swiper-button-prev',
+		// slidesOffsetBefore: 10,
+		// slidesOffsetAfter: 10
+		onInit: function(swiper) {
+			setTimeout(function(){
+				swiper.update(true);
+			}, 100);
+			if($('#swiper-container2 .swiper-button-prev').hasClass('swiper-button-disabled')) {
+				$('.left2>.swiper-button-prev').addClass('swiper-button-disabled');
+			}
+			if($('#swiper-container2 .swiper-button-next').hasClass('swiper-button-disabled')) {
+				$('.left2>.swiper-button-next').addClass('swiper-button-disabled');
+			}
+		},
+		onSlideChangeStart: function() {
+			if($('#swiper-container2 .swiper-button-prev').hasClass('swiper-button-disabled')) {
+				$('.left2>.swiper-button-prev').addClass('swiper-button-disabled');
+			} else {
+				$('.left2>.swiper-button-prev').removeClass('swiper-button-disabled');
+			}
+			if($('#swiper-container2 .swiper-button-next').hasClass('swiper-button-disabled')) {
+				$('.left2>.swiper-button-next').addClass('swiper-button-disabled');
+			} else {
+				$('.left2>.swiper-button-next').removeClass('swiper-button-disabled');
+			}
+		},
+		breakpoints: {
+		    1200: {
+				slidesPerView: 2,
+			}
+		}
+	});
+	$('.left2>.swiper-button-prev').click(function(){
+		$('#swiper-container2 .swiper-button-prev').click();
+	});
+	$('.left2>.swiper-button-next').click(function(){
+		$('#swiper-container2 .swiper-button-next').click();
+	});
+	
+	var trList=['leftUp','moveRight','moveDown','centerBig','rightDownBig'];
+	var swiper3Param = {
+		speed:500,
+		autoplay:4400,
+		autoplayDisableOnInteraction:false,
+		effect:'fade',
+		pagination : '#swiper-container3 .swiper-pagination',
+		paginationClickable :true,
+		onInit: function (swiper) {
+			swiper.wrapper.children('.swiper-slide-active').addClass(trList[parseInt(Math.random()*5)]);
+		},
+		paginationBulletRender: function (swiper, index, className) {
+		    return '<span class="' + className + '">' + (index + 1) + '</span>';
+		},
+		onSlideChangeStart: function(swiper){
+			var nextSlide=swiper.slides.eq(swiper.activeIndex);
+			nextSlide.addClass(trList[Math.floor(Math.random()*5)]);
+		},
+		onSlideChangeEnd: function(swiper){
+			var prevSlide=swiper.slides[swiper.previousIndex];
+			prevSlide.className="swiper-slide";
+		},
+		breakpoints: {
+		    1200: {
+		        autoplay:300000,
+				speed:1000,
+				effect: 'slide',
+				autoplayDisableOnInteraction: false,
+				loop:true,
+				centeredSlides: true,
+				slidesPerView: 2,
+				onInit:function(swiper){
+					setTimeout(function(){
+						swiper.update(true);
+					}, 100);
+				},
+				paginationBulletRender: null,
+				onSlideChangeStart: function(){},
+				onSlideChangeEnd: function(){}
+		    }
+		}
+	}
+	var swiper3 = new Swiper('#swiper-container3',swiper3Param);
+	
+	var mySwiper4 = new Swiper ('#swiper-container4', {
+	    loop: true,
+		mousewheelControl: true,
+	    pagination: '.swiper-pagination',
+	    paginationClickable: true,
+		onInit:function(swiper){
+			setTimeout(function(){
+				swiper.update(true);
+			}, 100);
+		}
+	});
+	
+	$('.tab_head li').click(function(){
+		$(this).addClass('cur').siblings().removeClass('cur');
+		var $tabCon = $(this).closest('.con').find('.tab_con');
+		$tabCon.removeClass('active').eq($(this).index()).addClass('active');
+	});
+});
+</script>
+</body>
+</html>

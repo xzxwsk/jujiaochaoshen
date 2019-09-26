@@ -341,8 +341,8 @@ nav{height: 60px; background: #19abeb;
 		}
 	}
 }
-.bottom{color: #fff;
-	.bottom1{height: 450px; background: url(images/bottom_bg.jpg) no-repeat;
+.bottom{color: #fff; background: url(images/bottom_bg.jpg) no-repeat; background-size: cover; background-repeat: no-repeat;background-position: center 0;
+	.bottom1{height: 450px;
 		.con{@include flexbox(); flex-direction: row; justify-content: space-between; align-items: center; height: 100%;}
 		.logo{width: 472px; height: 218px; background: url(images/logo_02.png);}
 		.qrcode{@include flexbox(); flex-direction: row; justify-content: center; align-items: center; height: 100%;
@@ -360,7 +360,7 @@ nav{height: 60px; background: #19abeb;
 			}
 		}
 	}
-	.bottom2{padding: 15px 0 0; height: 37px; font-size: 14px; background: #35b1d1;
+	.bottom2{padding: 15px 0 0; height: 37px; font-size: 14px; background: rgba(255,255,255,.1);
 		a{margin: 0 15px 0 0; color: #fff;
 			&:last-child{margin: 0;}
 		}
