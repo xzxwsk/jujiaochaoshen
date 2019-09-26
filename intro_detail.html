@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>医院概况-医院介绍</title>
+<link href="css/swiper.css" rel="stylesheet" />
+<link href="css/aos.css" rel="stylesheet" />
+<link href="css/style.css" rel="stylesheet" />
+<script src="js/jquery.min.js"></script>
+<script src="js/swiper.min.js"></script>
+<script src="js/aos.min.js"></script>
+<script src="js/mootools-core.js"></script>
+<script src="js/mediabox.js"></script>
+<script src="js/common.js"></script>
+</head>
+<body>
+<header id="header"></header>
+<div class="location">
+	<div class="con">
+		<span>当前位置：</span><a href="index.html">网站首页</a>-<a href="intro.html">医院概况</a>-医院介绍
+	</div>
+</div>
+<div class="intro_detail">
+	<div class="con">
+		<ul class="tab_head">
+			<li class="cur">医院介绍</li>
+			<li>荣誉证书</li>
+			<li>医院环境</li>
+			<li>医疗设备</li>
+			<li>专家团队</li>
+		</ul>
+		<div class="tab_con tab_con1">
+			<h1 class="title" data-aos="fade-up">成都聚焦超声医院 <span class="split_line">|</span> 子宫肌瘤  子宫腺肌病微无创医学研究院</h1>
+			<div class="img" data-aos="fade-up">
+				<img src="img/innner_img_3_07.jpg" />
+				<img src="img/innner_img_3_08.jpg" />
+			</div>
+			<div class="word" data-aos="fade-up">
+				<p>成都聚焦超声医院，是以高强度聚焦超声手术（FUS)无创消融治疗子宫肌瘤、子宫腺肌病为特色的专病医院。也是子宫肌瘤，子宫腺肌病微无创治疗医学研究基地。</p>
+				<p>成都聚焦超声医院拥有一支由聚焦超声专家桂永忠院长领军的一流的医疗团队。桂永忠院长拥有20年的聚焦超声治疗经验，上万例次的成功治疗案例，是全国最早从事聚焦超声治疗的专家之一。</p>
+				<p>2019年成都聚焦超声医院成立，医院营业面积5000多平方米，环境优雅舒适，设施设备先进，医护团队技术精湛，医德高尚。术业专攻，重点学科-高强度聚焦超声手术（FUS)无创治疗子宫肌瘤，子宫腺肌病。</p>
+				<p>珍爱子宫，尊重器官，以伤害更小的方式治疗疾病。</p>
+			</div>
+		</div>
+		<div class="tab_con tab_con2 active">
+			<ul class="ls">
+				<li>
+					<a href="img/innner_img_3_01.jpg" rel="lightbox[ostec]" title="荣誉证书">
+						<div class="img" style="background-image: url(img/innner_img_3_01.jpg);">							
+							<i class="bg"></i>
+							<i class="icon"></i>
+						</div>
+						<div class="word">荣誉证书</div>
+					</a>
+				</li>
+				<li>
+					<a href="img/innner_img_3_02.jpg" rel="lightbox[ostec]" title="荣誉证书1">
+						<div class="img" style="background-image: url(img/innner_img_3_02.jpg);">							
+							<i class="bg"></i>
+							<i class="icon"></i>
+						</div>
+						<div class="word">荣誉证书1</div>
+					</a>
+				</li>
+				<li>
+					<a href="img/innner_img_3_03.jpg" rel="lightbox[ostec]" title="荣誉证书2">
+						<div class="img" style="background-image: url(img/innner_img_3_03.jpg);">							
+							<i class="bg"></i>
+							<i class="icon"></i>
+						</div>
+						<div class="word">荣誉证书2</div>
+					</a>
+				</li>
+			</ul>
+			<div class="pages">
+				<a class="prev" href="####" disabled="disabled">&lt;</a>
+				<a class="on" href="####" disabled="disabled">1</a>
+				<a href="####">2</a>
+				<a href="####">3</a>
+				<a href="####">4</a>
+				<a href="####">5</a>
+				<a class="next" href="####">&gt;</a>
+			</div>
+		</div>
+		<div class="tab_con">
+			
+		</div>
+		<div class="tab_con">
+			
+		</div>
+		<div class="tab_con">
+			
+		</div>
+	</div>
+</div>
+<footer id="footer"></footer>
+<script>
+AOS.init({
+	offset: 200,
+	duration: 1000,
+	easing: 'ease',
+	delay: 200,
+	once: 'true'
+});
+Mediabox.scanPage = function() {
+  var links = $$("a").filter(function(el) {
+    return el.rel && el.rel.test(/^lightbox/i);
+  });
+  $$(links).mediabox({/* Put custom options here */}, null, function(el) {
+    var rel0 = this.rel.replace(/[[]|]/gi," ");
+    var relsize = rel0.split(" ");
+    return (this == el) || ((this.rel.length > 8) && el.rel.match(relsize[1]));
+  });
+};
+window.addEvent("domready", Mediabox.scanPage);
+$(function(){
+	$("#header").load('./head.html', function() {
+		$("#footer").load('./footer.html', function() {
+			AOS.refreshHard();
+		});
+	});
+	$('.tab_head li').click(function(){
+		$(this).addClass('cur').siblings().removeClass('cur');
+		var $tabCon = $(this).closest('.con').find('.tab_con');
+		$tabCon.removeClass('active').eq($(this).index()).addClass('active');
+	});
+	$('.tab_con2 li').click(function(){
+		$(this).addClass('cur').siblings().removeClass('cur');
+	});
+});
+</script>
+</body>
+</html>
