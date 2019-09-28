@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>新闻中心</title>
+<link href="css/swiper.css" rel="stylesheet" />
+<link href="css/aos.css" rel="stylesheet" />
+<link href="css/style.css" rel="stylesheet" />
+<script src="js/jquery.min.js"></script>
+<script src="js/swiper.min.js"></script>
+<script src="js/aos.min.js"></script>
+<script src="js/common.js"></script>
+</head>
+<body>
+<header id="header"></header>
+<div class="inner_banner">
+	<img src="css/images/news_ls_02.jpg" />
+	<!-- <span class="word">治疗适应症</span> -->
+</div>
+<div class="location">
+	<div class="con">
+		<span>当前位置：</span><a href="index.html">网站首页</a>-新闻中心
+	</div>
+</div>
+<div class="news">
+	<div class="con">
+		<div class="clearfix title">
+			<div class="word">医院新闻</div>
+			<a href="##" class="more">More <i class="icon"></i></a>
+		</div>
+	</div>
+</div>
+<footer id="footer"></footer>
+<script>
+AOS.init({
+	offset: 200,
+	duration: 1000,
+	easing: 'ease',
+	delay: 200,
+	once: 'true'
+});
+$(function(){
+	$("#header").load('./head.html', function() {
+		$("#footer").load('./footer.html', function() {
+			AOS.refreshHard();
+		});
+	});
+	$('.tab_head li').click(function(){
+		$(this).addClass('cur').siblings().removeClass('cur');
+		var $tabCon = $(this).closest('.con').find('.tab_con');
+		$tabCon.removeClass('active').eq($(this).index()).addClass('active');
+	});
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>治疗适应症</title>
+<link href="css/swiper.css" rel="stylesheet" />
+<link href="css/aos.css" rel="stylesheet" />
+<link href="css/style.css" rel="stylesheet" />
+<script src="js/jquery.min.js"></script>
+<script src="js/swiper.min.js"></script>
+<script src="js/aos.min.js"></script>
+<script src="js/common.js"></script>
+</head>
+<body>
+<header id="header"></header>
+<div class="inner_banner">
+	<img src="css/images/zlsyz_bg1.jpg" />
+	<!-- <span class="word">治疗适应症</span> -->
+</div>
+<div class="location">
+	<div class="con">
+		<span>当前位置：</span><a href="index.html">网站首页</a>-治疗适应症
+	</div>
+</div>
+<div class="zlsyz">
+	<div class="con">
+		<ul>
+			<li>
+				<a href="##">
+					<div class="box">
+						<span class="icon icon1"></span>
+						<span class="txt">子宫肌瘤</span>
+						<span class="en">Uterine fibroids</span>
+					</div>
+					<p>利用超声波良好的方向性，组织穿透性和可聚焦性，不开刀、不打孔将超声能量通过...</p>
+				</a>
+			</li>
+			<li>
+				<a href="##">
+					<div class="box">
+						<span class="icon icon2"></span>
+						<span class="txt">子宫腺肌症</span>
+						<span class="en">Adenomyosis</span>
+					</div>
+					<p>利用超声波良好的方向性，组织穿透性和可聚焦性，不开刀、不打孔将超声能量通过...</p>
+				</a>
+			</li>
+			<li>
+				<a href="##">
+					<div class="box">
+						<span class="icon icon3"></span>
+						<span class="txt">乳腺纤维瘤</span>
+						<span class="en">Breast fibroma</span>
+					</div>
+					<p>利用超声波良好的方向性，组织穿透性和可聚焦性，不开刀、不打孔将超声能量通过...</p>
+				</a>
+			</li>
+			<li>
+				<a href="##">
+					<div class="box">
+						<span class="icon icon4"></span>
+						<span class="txt">肝癌</span>
+						<span class="en">Liver cancer</span>
+					</div>
+					<p>利用超声波良好的方向性，组织穿透性和可聚焦性，不开刀、不打孔将超声能量通过...</p>
+				</a>
+			</li>
+			<li>
+				<a href="##">
+					<div class="box">
+						<span class="icon icon5"></span>
+						<span class="txt">胰腺癌</span>
+						<span class="en">Pancreatic cancer</span>
+					</div>
+					<p>利用超声波良好的方向性，组织穿透性和可聚焦性，不开刀、不打孔将超声能量通过...</p>
+				</a>
+			</li>
+			<li>
+				<a href="##">
+					<div class="box">
+						<span class="icon icon6"></span>
+						<span class="txt">外阴白斑</span>
+						<span class="en">Vulva white spot</span>
+					</div>
+					<p>利用超声波良好的方向性，组织穿透性和可聚焦性，不开刀、不打孔将超声能量通过...</p>
+				</a>
+			</li>
+		</ul>
+	</div>
+</div>
+<footer id="footer"></footer>
+<script>
+AOS.init({
+	offset: 200,
+	duration: 1000,
+	easing: 'ease',
+	delay: 200,
+	once: 'true'
+});
+$(function(){
+	$("#header").load('./head.html', function() {
+		$("#footer").load('./footer.html', function() {
+			AOS.refreshHard();
+		});
+	});
+});
+</script>
+</body>
+</html>
