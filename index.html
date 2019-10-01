@@ -66,8 +66,8 @@
 		<div class="clearfix title">
 			<div class="word">治疗方式</div>
 			<ul class="tab_head">
-				<li class="cur" title="高强度聚焦超声手术（FUS）">高强度聚焦超声手术（FUS）</li>
-				<li title="海极星特色妇科治疗">海极星特色妇科治疗</li>
+				<li class="cur" title="高强度聚焦超声手术（FUS）"><a href="##">高强度聚焦超声手术（FUS）</a></li>
+				<li title="海极星特色妇科治疗"><a href="##">海极星特色妇科治疗</a></li>
 			</ul>
 			<a href="##" class="more">More <i class="icon"></i></a>
 		</div>
@@ -142,10 +142,10 @@
 		<div class="clearfix title">
 			<div class="word">新闻中心</div>
 			<ul class="tab_head">
-				<li class="cur">院内新闻</li>
-				<li>最新动态</li>
-				<li>知识科普</li>
-				<li>海扶视界</li>
+				<li class="cur"><a href="##">院内新闻</a></li>
+				<li><a href="##">最新动态</a></li>
+				<li><a href="##">知识科普</a></li>
+				<li><a href="##">海扶视界</a></li>
 			</ul>
 			<a href="##" class="more">More <i class="icon"></i></a>
 		</div>
@@ -700,7 +700,7 @@ $(function(){
 		}
 	});
 	
-	$('.tab_head li').click(function(){
+	$('.tab_head li').mouseover(function(){
 		$(this).addClass('cur').siblings().removeClass('cur');
 		var $tabCon = $(this).closest('.con').find('.tab_con');
 		$tabCon.removeClass('active').eq($(this).index()).addClass('active');
