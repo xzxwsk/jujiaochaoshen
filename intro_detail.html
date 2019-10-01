@@ -387,6 +387,7 @@ Mediabox.scanPage = function() {
 window.addEvent("domready", Mediabox.scanPage);
 $(function(){
 	$("#header").load('./head.html', function() {
+		$("nav li").eq(1).addClass('cur').siblings().removeClass('cur');
 		$("#footer").load('./footer.html', function() {
 			AOS.refreshHard();
 		});

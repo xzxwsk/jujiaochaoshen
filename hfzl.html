@@ -219,7 +219,7 @@
 				<li>
 					<a href="img/hfzl_11.jpg" rel="lightbox[ostec]" title="治疗原理1">
 						<div class="img" style="background-image: url(img/hfzl_11.jpg);">
-							<span href="##" class="play_btn"></span>
+							<span class="play_btn"></span>
 						</div>
 						<div class="word">治疗原理1</div>
 					</a>
@@ -227,7 +227,7 @@
 				<li>
 					<a href="img/hfzl_13.jpg" rel="lightbox[ostec]" title="治疗原理2">
 						<div class="img" style="background-image: url(img/hfzl_13.jpg);">
-							<span href="##" class="play_btn"></span>
+							<span class="play_btn"></span>
 						</div>
 						<div class="word">治疗原理2</div>
 					</a>
@@ -235,7 +235,7 @@
 				<li>
 					<a href="img/hfzl_15.jpg" rel="lightbox[ostec]" title="治疗原理3">
 						<div class="img" style="background-image: url(img/hfzl_15.jpg);">							
-							<span href="##" class="play_btn"></span>
+							<span class="play_btn"></span>
 						</div>
 						<div class="word">治疗原理3</div>
 					</a>
@@ -255,6 +255,7 @@ AOS.init({
 });
 $(function(){
 	$("#header").load('./head.html', function() {
+		$("nav li").eq(2).addClass('cur').siblings().removeClass('cur');
 		$("#footer").load('./footer.html', function() {
 			AOS.refreshHard();
 		});

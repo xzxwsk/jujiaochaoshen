@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>新闻中心-视频列表</title>
+<link href="css/swiper.css" rel="stylesheet" />
+<link href="css/aos.css" rel="stylesheet" />
+<link href="css/style.css" rel="stylesheet" />
+<script src="js/jquery.min.js"></script>
+<script src="js/swiper.min.js"></script>
+<script src="js/aos.min.js"></script>
+<script src="js/common.js"></script>
+</head>
+<body>
+<header id="header"></header>
+<div class="inner_banner">
+	<img src="css/images/news_ls_02.jpg" />
+	<!-- <span class="word">治疗适应症</span> -->
+</div>
+<div class="location">
+	<div class="con">
+		<span>当前位置：</span><a href="index.html">网站首页</a>-<a href="news.html">新闻中心</a>-视频列表
+	</div>
+</div>
+<div class="news_video_ls">
+	<div class="con">
+		<ul class="tab_head clearfix">
+			<li class="cur">医院新闻</li>
+			<li>媒体报道</li>
+			<li>知识科普</li>
+			<li>聚焦超声影像</li>
+		</ul>
+		<div class="tab_con active">
+			<ul class="ls">
+				<li>
+					<a href="news_video_detail.html" rel="lightbox[ostec]" title="共推聚焦超声消融手术全球发展">
+						<div class="img" style="background-image: url(img/news_ls_12.jpg);">
+							<span class="play_btn"></span>
+						</div>
+						<div class="word">共推聚焦超声消融手术全球发展</div>
+					</a>
+				</li>
+				<li>
+					<a href="news_video_detail.html" rel="lightbox[ostec]" title="聚焦超声肿瘤治疗系统">
+						<div class="img" style="background-image: url(img/hfzl_13.jpg);">
+							<span class="play_btn"></span>
+						</div>
+						<div class="word">聚焦超声肿瘤治疗系统</div>
+					</a>
+				</li>
+				<li>
+					<a href="news_video_detail.html" rel="lightbox[ostec]" title="JC200D型 聚焦超声肿瘤治疗系统">
+						<div class="img" style="background-image: url(img/hfzl_15.jpg);">							
+							<span class="play_btn"></span>
+						</div>
+						<div class="word">JC200D型 聚焦超声肿瘤治疗系统</div>
+					</a>
+				</li>
+			</ul>
+		</div>
+		<div class="tab_con">
+			<h2>媒体报道</h2>
+		</div>
+		<div class="tab_con">
+			<h2>知识科普</h2>
+		</div>
+		<div class="tab_con">
+			<h2>聚焦超声影像</h2>
+		</div>
+	</div>
+</div>
+<footer id="footer"></footer>
+<script>
+AOS.init({
+	offset: 200,
+	duration: 1000,
+	easing: 'ease',
+	delay: 200,
+	once: 'true'
+});
+$(function(){
+	$("#header").load('./head.html', function() {
+		$("nav li").eq(5).addClass('cur').siblings().removeClass('cur');
+		$("#footer").load('./footer.html', function() {
+			AOS.refreshHard();
+		});
+	});
+	
+	$('.tab_head li').click(function(){
+		$(this).addClass('cur').siblings().removeClass('cur');
+		var $tabCon = $(this).closest('.con').find('.tab_con');
+		$tabCon.removeClass('active').eq($(this).index()).addClass('active');
+	});
+});
+</script>
+</body>
+</html>

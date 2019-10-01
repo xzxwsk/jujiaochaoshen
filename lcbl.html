@@ -17,7 +17,7 @@
 <header id="header"></header>
 <div class="inner_banner">
 	<img src="css/images/zlsyz_bg1.jpg" />
-	<!-- <span class="word">治疗适应症</span> -->
+	<!-- <span class="word">临床病例</span> -->
 </div>
 <div class="location">
 	<div class="con">
@@ -176,6 +176,7 @@ AOS.init({
 });
 $(function(){
 	$("#header").load('./head.html', function() {
+		$("nav li").eq(4).addClass('cur').siblings().removeClass('cur');
 		$("#footer").load('./footer.html', function() {
 			AOS.refreshHard();
 		});
