@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>就诊指南</title>
+<link href="css/swiper.css" rel="stylesheet" />
+<link href="css/aos.css" rel="stylesheet" />
+<link href="css/style.css" rel="stylesheet" />
+<script src="js/jquery.min.js"></script>
+<script src="js/swiper.min.js"></script>
+<script src="js/aos.min.js"></script>
+<script src="js/common.js"></script>
+</head>
+<body>
+<header id="header"></header>
+<div class="jzzl_mobile">
+	<div class="con">
+		<h3>就诊指南</h3>
+		<ul class="ls">
+			<li><a href="##">挂号方式</a></li>
+			<li><a href="##">门诊就诊流程及注意事项</a></li>
+			<li><a href="##">门诊检查流程及注意事项</a></li>
+			<li><a href="##">入院办理流程</a></li>
+			<li><a href="##">病案复印须知</a></li>
+			<li><a href="##">门诊部挂号室优质服务措施</a></li>
+			<li><a href="##">分级诊疗-省医院与社区卫生服务中心双向转诊流程</a></li>
+			<li><a href="##">分级诊疗-基层上转患者就诊流程图</a></li>
+			<li><a href="##">分级诊疗-双向转诊患者转出规范及流程</a></li>
+		</ul>
+	</div>
+</div>
+<footer id="footer"></footer>
+<script>
+AOS.init({
+	offset: 200,
+	duration: 1000,
+	easing: 'ease',
+	delay: 200,
+	once: 'true'
+});
+$(function(){
+	$("#header").load('./head.html', function() {
+		$("nav li").eq(6).addClass('cur').siblings().removeClass('cur');
+		$("#footer").load('./footer.html', function() {
+			AOS.refreshHard();
+		});
+	});
+});
+</script>
+</body>
+</html>

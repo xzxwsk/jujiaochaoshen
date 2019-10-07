@@ -24,14 +24,90 @@
 	<section class="section1" data-aos="fade-up">
 		<div class="con">
 			<div class="clearfix title">
-				<div class="word">治疗方式</div>
+				<div class="word">医院概况</div>
 				<a href="index.html" class="more">查看主页</a>
 			</div>
-			<ul>
+			<ul class="ls">
 				<li><a href="##">医院介绍</a></li>
 				<li><a href="##">荣誉证书</a></li>
 				<li><a href="##">医院环境</a></li>
-				
+				<li><a href="##">医疗设备</a></li>
+				<li><a href="##">专家团队</a></li>
+			</ul>
+		</div>
+	</section>
+	<section class="section1" data-aos="fade-up">
+		<div class="con">
+			<div class="clearfix title">
+				<div class="word">海扶治疗</div>
+				<a href="index.html" class="more">查看主页</a>
+			</div>
+			<ul class="ls">
+				<li><a href="##">治疗原理</a></li>
+				<li><a href="##">设备介绍</a></li>
+				<li><a href="##">治疗方式</a></li>
+			</ul>
+		</div>
+	</section>
+	<section class="section1" data-aos="fade-up">
+		<div class="con">
+			<div class="clearfix title">
+				<div class="word">治疗适应症</div>
+				<a href="index.html" class="more">查看主页</a>
+			</div>
+			<ul class="ls">
+				<li><a href="##">子宫肌瘤</a></li>
+				<li><a href="##">子宫腺肌症</a></li>
+				<li><a href="##">子宫内膜异位症</a></li>
+				<li><a href="##">子宫腺肌瘤</a></li>
+				<li><a href="##">乳腺纤维腺瘤</a></li>
+				<li><a href="##">肝血管瘤</a></li>
+			</ul>
+		</div>
+	</section>
+	<section class="section1" data-aos="fade-up">
+		<div class="con">
+			<div class="clearfix title">
+				<div class="word">临床病例</div>
+				<a href="index.html" class="more">查看主页</a>
+			</div>
+		</div>
+	</section>
+	<section class="section1" data-aos="fade-up">
+		<div class="con">
+			<div class="clearfix title">
+				<div class="word">新闻中心</div>
+				<a href="index.html" class="more">查看主页</a>
+			</div>
+			<ul class="ls">
+				<li><a href="##">医院新闻</a></li>
+				<li><a href="##">媒体报道</a></li>
+				<li><a href="##">知识科普</a></li>
+				<li><a href="##">聚焦超声影像</a><i class="icon"></i>
+					<ul class="sub_menu">
+						<li><a href="##">视频治疗</a></li>
+						<li><a href="##">媒体报道视频</a></li>
+					</ul>
+				</li>
+			</ul>
+		</div>
+	</section>
+	<section class="section1" data-aos="fade-up">
+		<div class="con">
+			<div class="clearfix title">
+				<div class="word">就医指南</div>
+				<a href="index.html" class="more">查看主页</a>
+			</div>
+			<ul class="ls">
+				<li><a href="##">就诊流程</a></li>
+				<li><a href="##">诊疗时间</a></li>
+				<li><a href="##">医院导航</a><i class="icon"></i>
+					<ul class="sub_menu">
+						<li><a href="##">视频治疗</a></li>
+						<li><a href="##">媒体报道视频</a></li>
+					</ul>
+				</li>
+				<li><a href="##">常见问题</a></li>
 			</ul>
 		</div>
 	</section>
@@ -51,6 +127,10 @@ $(function(){
 		$("#footer").load('./footer.html', function() {
 			AOS.refreshHard();
 		});
+	});
+	$('.ls').on('click', '>li', function(){
+		var closest = $(this).closest('section');
+		closest.addClass('open').siblings().removeClass('open');
 	});
 });
 </script>
