@@ -90,13 +90,16 @@ $(".navbtn").click(function(){
 	$(".mobile_nav").toggleClass('open');
 });
 
+var scrollTop = $(window).scrollTop();
 var st = null;
 var curLi = null;
 var subNav = $("nav .sub_nav");
 $("nav>.con>ul>li").on("mouseover", function(){
 	var index = $(this).index();
 	$(curLi).removeClass('hover');
+	scrollTop = $(window).scrollTop();
 	$(this).addClass('hover');
+	subNav.css("top", (252 - scrollTop) + 'px');;
 	curLi = this;
 	if (index === 1) {
 		if(st) {
@@ -127,7 +130,6 @@ subNav.mouseout(function(){
 	}, 200);
 });
 
-var scrollTop = $(window).scrollTop();
 subNav.css("top", (252 - scrollTop) + 'px');
 $(window).scroll(function(){
 	if(!(subNav[0].style.display === 'none' || subNav[0].style.display === '')) {
