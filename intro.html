@@ -53,79 +53,25 @@
 			<div class="swiper-container" id="swiper-container">
 			    <div class="swiper-wrapper">
 			        <div class="swiper-slide">
-						<ul class="ls">
-							<li>
-								<a href="intro_detail.html">
-									<img src="img/innner_img_3_01.jpg" />
-									<span class="bg"></span>
-									<span class="txt">医学装备部举办医学装备第三级管理</span>
-								</a>
-							</li>
-							<li>
-								<a href="intro_detail.html">
-									<img src="img/innner_img_3_02.jpg" />
-									<span class="bg"></span>
-									<span class="txt">医学装备部举办医学装备第三级管理专题会暨医学...</span>
-								</a>
-							</li>
-							<li>
-								<a href="intro_detail.html">
-									<img src="img/innner_img_3_03.jpg" />
-									<span class="bg"></span>
-									<span class="txt">医学装备部举办医学装备第三级管理专题会暨医学...</span>
-								</a>
-							</li>
-						</ul>
+						<a href="intro_detail.html">
+							<img src="img/innner_img_3_01.jpg" />
+							<span class="bg"></span>
+							<span class="txt">医学装备部举办医学装备第三级管理</span>
+						</a>
 					</div>
 					<div class="swiper-slide">
-						<ul class="ls">
-							<li>
-								<a href="intro_detail.html">
-									<img src="img/innner_img_3_01.jpg" />
-									<span class="bg"></span>
-									<span class="txt">医学装备部举办医学装备第三级管理</span>
-								</a>
-							</li>
-							<li>
-								<a href="intro_detail.html">
-									<img src="img/innner_img_3_02.jpg" />
-									<span class="bg"></span>
-									<span class="txt">医学装备部举办医学装备第三级管理专题会暨医学...</span>
-								</a>
-							</li>
-							<li>
-								<a href="intro_detail.html">
-									<img src="img/innner_img_3_03.jpg" />
-									<span class="bg"></span>
-									<span class="txt">医学装备部举办医学装备第三级管理专题会暨医学...</span>
-								</a>
-							</li>
-						</ul>
+						<a href="intro_detail.html">
+							<img src="img/innner_img_3_02.jpg" />
+							<span class="bg"></span>
+							<span class="txt">医学装备部举办医学装备第三级管理专题会暨医学...</span>
+						</a>
 					</div>
 					<div class="swiper-slide">
-						<ul class="ls">
-							<li>
-								<a href="intro_detail.html">
-									<img src="img/innner_img_3_01.jpg" />
-									<span class="bg"></span>
-									<span class="txt">医学装备部举办医学装备第三级管理</span>
-								</a>
-							</li>
-							<li>
-								<a href="intro_detail.html">
-									<img src="img/innner_img_3_02.jpg" />
-									<span class="bg"></span>
-									<span class="txt">医学装备部举办医学装备第三级管理专题会暨医学...</span>
-								</a>
-							</li>
-							<li>
-								<a href="intro_detail.html">
-									<img src="img/innner_img_3_03.jpg" />
-									<span class="bg"></span>
-									<span class="txt">医学装备部举办医学装备第三级管理专题会暨医学...</span>
-								</a>
-							</li>
-						</ul>
+						<a href="intro_detail.html">
+							<img src="img/innner_img_3_03.jpg" />
+							<span class="bg"></span>
+							<span class="txt">医学装备部举办医学装备第三级管理专题会暨医学...</span>
+						</a>
 					</div>
 				</div>
 				<div class="swiper-pagination"></div>
@@ -202,7 +148,7 @@
 			<a href="intro_detail.html" class="more">More <i class="icon"></i></a>
 			<a href="intro_detail.html" class="mobile_more">查看更多</i></a>
 		</div>
-		<ul class="ls">
+		<ul class="ls intro_ls">
 			<li>
 				<a href="intro_detail.html" style="background-image: url(img/img_10.jpg);">
 					<span class="left">
@@ -282,6 +228,8 @@ $(function(){
 		mousewheelControl: true,
 	    pagination: '#swiper-container .swiper-pagination',
 	    paginationClickable: true,
+		slidesPerView: 3,
+		spaceBetween: 60,
 		onInit:function(swiper){
 			setTimeout(function(){
 				swiper.update(true);
@@ -290,7 +238,7 @@ $(function(){
 	});
 	
 	var swiper2 = new Swiper('#swiper-container2',{
-		autoplay:3000,
+		autoplay:300000,
 		speed:1000,
 		effect: 'slide',
 		autoplayDisableOnInteraction: false,

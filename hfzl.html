@@ -30,8 +30,8 @@
 			<div class="clearfix title">
 				<div class="word">治疗方式</div>
 				<ul class="tab_head">
-					<li class="cur" title="高强度聚焦超声手术（FUS）">高强度聚焦超声手术（FUS）</li>
-					<li title="海极星特色妇科治疗">海极星特色妇科治疗</li>
+					<li class="cur" title="高强度聚焦超声手术（FUS）"><a href="##">高强度聚焦超声手术（FUS）</a></li>
+					<li title="海极星特色妇科治疗"><a href="##">海极星特色妇科治疗</a></li>
 				</ul>
 				<a href="##" class="more">More <i class="icon"></i></a>
 			</div>
@@ -43,7 +43,7 @@
 							09-08
 						</div>
 						<div class="title1"><a href="##">锡盟旅游局积极组织参加中国-蒙古国博览会 在组织布展和评选中取得...</a></div>
-						<p>2015年10月27日，首届中国-蒙古国博览会暨第九届中国民族商品交易会在内蒙古自治区呼和浩特市国际会展中心圆满落幕。此次中蒙博览...<a href="##" class="view_detail">[查看详细]</a></p>
+						<p>2015年10月27日，首届中国-蒙古国博览会暨第九届中国民族商品交易会在内蒙古自治区呼和浩特市国际会展中心圆满落幕。此次中蒙博览...<a href="##">[查看详细]</a></p>
 					</div>
 					<ul class="ls">
 						<li class="clearfix"><a href="##">锡盟旅游局积极组织参加中国-蒙古国博览会 在组织布展和评选中取···</a><span class="date">2019-09-08</span></li>
@@ -100,7 +100,7 @@
 							09-08
 						</div>
 						<div class="title1"><a href="##">222锡盟旅游局积极组织参加中国-蒙古国博览会 在组织布展和评选中取得...</a></div>
-						<p>2015年10月27日，首届中国-蒙古国博览会暨第九届中国民族商品交易会在内蒙古自治区呼和浩特市国际会展中心圆满落幕。此次中蒙博览...<a href="##" class="view_detail">[查看详细]</a></p>
+						<p>2015年10月27日，首届中国-蒙古国博览会暨第九届中国民族商品交易会在内蒙古自治区呼和浩特市国际会展中心圆满落幕。此次中蒙博览...<a href="##">[查看详细]</a></p>
 					</div>
 					<ul class="ls">
 						<li class="clearfix"><a href="##">锡盟旅游局积极组织参加中国-蒙古国博览会 在组织布展和评选中取···</a><span class="date">2019-09-08</span></li>
@@ -269,7 +269,7 @@ $(function(){
 		paginationClickable :true
 	});
 	var swiper2 = null;
-	$('.tab_head li').click(function(){
+	$('.tab_head li').mouseover(function(){
 		$(this).addClass('cur').siblings().removeClass('cur');
 		var $tabCon = $(this).closest('.con').find('.tab_con');
 		$tabCon.removeClass('active').eq($(this).index()).addClass('active');

@@ -27,10 +27,10 @@
 <div class="news_video_ls">
 	<div class="con">
 		<ul class="tab_head clearfix">
-			<li class="cur">医院新闻</li>
-			<li>媒体报道</li>
-			<li>知识科普</li>
-			<li>聚焦超声影像</li>
+			<li class="cur"><a href="##">医院新闻</a></li>
+			<li><a href="##">媒体报道</a></li>
+			<li><a href="##">知识科普</a></li>
+			<li><a href="##">聚焦超声影像</a></li>
 		</ul>
 		<div class="tab_con active">
 			<ul class="ls">
@@ -88,7 +88,7 @@ $(function(){
 		});
 	});
 	
-	$('.tab_head li').click(function(){
+	$('.tab_head li').mouseover(function(){
 		$(this).addClass('cur').siblings().removeClass('cur');
 		var $tabCon = $(this).closest('.con').find('.tab_con');
 		$tabCon.removeClass('active').eq($(this).index()).addClass('active');
